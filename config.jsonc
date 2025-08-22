@@ -1,12 +1,15 @@
 // -*- mode: jsonc -*-
-{
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     // "height": 30, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
+{
+    // TODO: I want to put a media player in the top left
     "modules-left": [
+        // "mpd",   // I'll likely end up having to create a custom media module
+        // "custom/media",
         "temperature",
         "memory",
         "cpu"
@@ -23,8 +26,9 @@
     ],
     // Modules configuration
     "hyprland/workspaces": {
-        "disable-scroll": true,
         "all-outputs": false,
+        "active-only": false,
+        "disable-scroll": true,
         "warp-on-scroll": false,
         "format": "{icon}",
         "format-icons": {
@@ -32,21 +36,9 @@
             "default": ""
         },
         "persistent-workspaces": {
-            "{icon}": [],
-            "{icon}": [],
-            "{icon}": [],
-            "{icon}": []
+            "*": [1,2,3,4]
             // "4": ["eDP-1"], // Always show a workspace with name '4', on output 'eDP-1' if it does not exists
             // "5": ["eDP-1", "DP-2"] // Always show a workspace with name '5', on outputs 'eDP-1' and 'DP-2' if it does not exists
-        }
-    },
-    "keyboard-state": {
-        "numlock": true,
-        "capslock": true,
-        "format": "{name} {icon}",
-        "format-icons": {
-            "locked": "",
-            "unlocked": ""
         }
     },
     "mpd": {
@@ -75,14 +67,8 @@
         "tooltip-format": "MPD (connected)",
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
-    "idle_inhibitor": {
-        "format": "{icon}",
-        "format-icons": {
-            "activated": "",
-            "deactivated": ""
-        }
-    },
     "clock": {
+        // TODO: Make this prettier :3
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
@@ -136,12 +122,6 @@
         "format-source": "{volume}% ",
         "format-source-muted": "",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
@@ -164,10 +144,11 @@
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
-			"shutdown": "shutdown",
-			"reboot": "reboot",
-			"suspend": "systemctl suspend",
-			"hibernate": "systemctl hibernate"
+			"shutdown": "shutdown now",
+			"reboot": "reboot now",
+			"suspend": "systemctl suspend"
+            // You need a swap partition to do hibernate or hybrid-sleep 
+			// "hibernate": "systemctl hibernate"
 		}
     }
 }
