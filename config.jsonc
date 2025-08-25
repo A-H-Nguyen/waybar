@@ -18,8 +18,9 @@
         "hyprland/workspaces"
     ],
     "modules-right": [
+        "tray",
         "pulseaudio",
-        "network",
+        // "network",
         "battery",
         "clock",
         "custom/power"
@@ -36,9 +37,7 @@
             "default": ""
         },
         "persistent-workspaces": {
-            "*": [1,2,3,4]
-            // "4": ["eDP-1"], // Always show a workspace with name '4', on output 'eDP-1' if it does not exists
-            // "5": ["eDP-1", "DP-2"] // Always show a workspace with name '5', on outputs 'eDP-1' and 'DP-2' if it does not exists
+            "*": 5, // 5 workspaces by default on every monitor
         }
     },
     "mpd": {
@@ -68,10 +67,10 @@
         "tooltip-format-disconnected": "MPD (disconnected)"
     },
     "clock": {
-        // TODO: Make this prettier :3
         // "timezone": "America/New_York",
+        "format": "<big>{:%I:%M %p}</big>",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
-        "format-alt": "{:%Y-%m-%d}"
+        "format-alt": "<big>{:%Y/%m/%d}</big>"
     },
     "cpu": {
         "format": "{usage}% ",
@@ -84,9 +83,9 @@
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
+        "format-critical": "{temperatureC}°C 󰸁",
         "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
+        "format-icons": ["", "", ""]
     },
     "battery": {
         "states": {
@@ -126,6 +125,13 @@
         },
         "on-click": "pavucontrol"
     },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "icons": {
+            // "nm-applet": "applications-internet"
+        }
+    },
     "custom/media": {
         "format": "{icon} {text}",
         "return-type": "json",
@@ -146,6 +152,7 @@
 		"menu-actions": {
 			"shutdown": "shutdown now",
 			"reboot": "reboot now",
+			// "suspend": "(sleep 1; systemctl suspend) & hyprlock"
 			"suspend": "systemctl suspend"
             // You need a swap partition to do hibernate or hybrid-sleep 
 			// "hibernate": "systemctl hibernate"
