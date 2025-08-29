@@ -6,9 +6,9 @@
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
 {
-    // TODO: I want to put a media player in the top left
+    // TODO: I want to put a media player in the top left. Replace the other modules with said media player
     "modules-left": [
-        // "mpd",   // I'll likely end up having to create a custom media module
+        // "mpd",   
         // "custom/media",
         "temperature",
         "memory",
@@ -31,14 +31,20 @@
         "active-only": false,
         "disable-scroll": true,
         "warp-on-scroll": false,
-        "format": "{icon}",
+        "format": "<big>{icon}</big>",
         "format-icons": {
-            "active": "",
+            "1": "",
+            "2": "",
+            "6": "",
+            "7": "",
+            // "active": "",
             "default": ""
-        },
-        "persistent-workspaces": {
-            "*": 5, // 5 workspaces by default on every monitor
         }
+        // TODO: I always have a workspace with terminal on "main monitor"
+        //       Maybe I can have a "main monitor" env var
+        // "persistent-workspaces": {
+        //     "*": 5, // 5 workspaces by default on every monitor
+        // }
     },
     "mpd": {
         "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
@@ -69,22 +75,22 @@
     "clock": {
         // "timezone": "America/New_York",
         "format": "<big>{:%I:%M %p}</big>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
         "format-alt": "<big>{:%Y/%m/%d}</big>"
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "<big>{usage}% </big>",
         "tooltip": false
     },
     "memory": {
-        "format": "{}% "
+        "format": "<big>{}% </big>"
     },
     "temperature": {
         // "thermal-zone": 2,
         // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
         "critical-threshold": 80,
-        "format-critical": "{temperatureC}°C 󰸁",
-        "format": "{temperatureC}°C {icon}",
+        "format-critical": "<big>{temperatureC}°C 󰸁</big>",
+        "format": "<big>{temperatureC}°C {icon}</big>",
         "format-icons": ["", "", ""]
     },
     "battery": {
@@ -93,14 +99,12 @@
             "warning": 30,
             "critical": 15
         },
-        "format": "{capacity}% {icon}",
-        // "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% {icon}",
-        "format-plugged": "{capacity}% ",
+        "format": "<big>{capacity}% {icon}</big>",
+        "format-charging": "<big>{capacity}% {icon}</big>",
+        "format-plugged": "<big></big>",
         "format-icons": {
             "default":  ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
             "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-            // "plugged": ["  ", "  ", "  ", "  ", "  ", "  ", "  ", "  /span>  , "  "]
         }
     },
     "network": {
@@ -125,6 +129,7 @@
         },
         "on-click": "pavucontrol"
     },
+    // TODO: Make this less ugly
     "tray": {
         "icon-size": 21,
         "spacing": 10,
@@ -145,14 +150,14 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
-        "format" : "⏻ ",
+        "format" : "<big>⏻</big> ",
 		"tooltip": false,
 		"menu": "on-click",
 		"menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
 		"menu-actions": {
 			"shutdown": "shutdown now",
-			"reboot": "reboot now",
-			// "suspend": "(sleep 1; systemctl suspend) & hyprlock"
+			"reboot": "shutdown -r now",
+            // TODO: Make a script for calling both hyprlock and suspend
 			"suspend": "systemctl suspend"
             // You need a swap partition to do hibernate or hybrid-sleep 
 			// "hibernate": "systemctl hibernate"
