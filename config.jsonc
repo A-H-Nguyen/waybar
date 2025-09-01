@@ -6,10 +6,8 @@
     // "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
 {
-    // TODO: I want to put a media player in the top left. Replace the other modules with said media player
     "modules-left": [
-        // "mpd",   
-        // "custom/media",
+        // "custom/media"
         "temperature",
         "memory",
         "cpu"
@@ -33,12 +31,15 @@
         "warp-on-scroll": false,
         "format": "<big>{icon}</big>",
         "format-icons": {
-            "1": "",
-            "2": "",
-            "6": "",
-            "7": "",
-            // "active": "",
-            "default": ""
+            // trying to get these to stay centered in the button is a pain
+            // "1": "",
+            // "2": "󰈹",
+            // "3": "󰇮",
+            // "6": "",
+            // "7": "",
+            // "8": "",
+            "active": "",
+            "default": ""
         }
         // TODO: I always have a workspace with terminal on "main monitor"
         //       Maybe I can have a "main monitor" env var
@@ -136,18 +137,6 @@
         "icons": {
             // "nm-applet": "applications-internet"
         }
-    },
-    "custom/media": {
-        "format": "{icon} {text}",
-        "return-type": "json",
-        "max-length": 40,
-        "format-icons": {
-            "spotify": "",
-            "default": "🎜"
-        },
-        "escape": true,
-        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
-        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/power": {
         "format" : "<big>⏻</big> ",

@@ -3,19 +3,31 @@
     border: none;
     border-radius: 0;
     font-family: '0xProtoNerdFont', Roboto, sans-serif;
-    font-size: 14px;
+    font-size: 15px;
     min-height: 0;
 }
 
+/* Miku Colors */
+.color-1 { color: #00b0e0; }   /* Cerulean */
+.color-2 { color: #5ed6e4; }   /* Turquoise Blue */
+.color-3 { color: #8cf3e9; }   /* Spray */
+.color-4 { color: #a2f6c8; }   /* Magic Mint */
+.color-5 { color: #d3f8d5; }   /* Blue Romance */
+.color-dark { color: #002b36; } /* Dark text */
+.color-white { color: #ffffff; }
+.color-warning { color: #002b36; }
+.color-audio-muted { color: #666666; }
+
+
 window#waybar {
-    background: #d3f8d5; /* Blue Romance */
+    background: #d3f8d5; 
     color: #002b36;      /* dark text for readability */
     border-bottom: 2px solid #00b0e0; /* Cerulean accent */
 }
 
 /* ===== Workspaces ===== */
 #workspaces button {
-    padding: 0 8px;
+    padding: 0 8px 0 4px;
     color: #00b0e0;         /* Cerulean */
     background: transparent;
     border-radius: 6px;
@@ -87,9 +99,15 @@ window#waybar {
 
 /* ===== Tooltip styling ===== */
 tooltip {
-    background: #5ed6e4;
+    background-color: transparent;
+    border: none;
+}
+
+tooltip label {
+    background: #d3f8d5; /* Blue Romance */
     color: #002b36;
     border-radius: 6px;
-    border: 1px solid #00b0e0;
+    border: 3px solid #5ed6e4; /* Turquoise */
+    /* margin: 8px */
 }
 
