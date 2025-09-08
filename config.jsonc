@@ -29,16 +29,16 @@
         "active-only": false,
         "disable-scroll": true,
         "warp-on-scroll": false,
-        "format": "<big>{icon}</big>",
+        "format": "<big>{name}</big>:<big>{icon}</big>",
         "format-icons": {
             // trying to get these to stay centered in the button is a pain
-            // "1": "",
-            // "2": "󰈹",
-            // "3": "󰇮",
-            // "6": "",
-            // "7": "",
-            // "8": "",
-            "active": "",
+            "1": "",
+            "2": "󰈹",
+            "3": "󰇮",
+            "6": "",
+            "7": "",
+            "8": "",
+            // "active": "",
             "default": ""
         }
         // TODO: I always have a workspace with terminal on "main monitor"

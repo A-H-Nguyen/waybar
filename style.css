@@ -14,22 +14,24 @@
 .color-4 { color: #a2f6c8; }   /* Magic Mint */
 .color-5 { color: #d3f8d5; }   /* Blue Romance */
 .color-dark { color: #002b36; } /* Dark text */
-.color-white { color: #ffffff; }
-.color-warning { color: #002b36; }
+.color-white { color: #ffffff; } .color-warning { color: #002b36; }
 .color-audio-muted { color: #666666; }
+/* TODO: Add more colors to this palette, and make alternate color palettes like in: https://www.youtube.com/watch?v=NrRVr-kysko&list=PLrc7oFthJWLvnQRZf85iUAAG_V6gTYfep&index=1 */
 
 
 window#waybar {
-    background: #d3f8d5; 
+    /* background: #d3f8d5;  */
+    background: transparent; 
     color: #002b36;      /* dark text for readability */
-    border-bottom: 2px solid #00b0e0; /* Cerulean accent */
+    /* border-bottom: 2px solid #00b0e0;  */ /* Cerulean accent */
 }
 
 /* ===== Workspaces ===== */
 #workspaces button {
-    padding: 0 8px 0 4px;
+    /* TODO: Tweak padding so that there's a small gap bw each workspace button */
+    padding: 0 12px 0 6px;
     color: #00b0e0;         /* Cerulean */
-    background: transparent;
+    background: #a2f6c8;  /* Magic Mint */
     border-radius: 6px;
     transition: background 0.2s;
 }
