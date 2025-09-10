@@ -1,0 +1,19 @@
+/* Miku Colors */
+@define-color miku_cerulean         #00b0e0;
+@define-color miku_turquoise        #5ed6e4;
+@define-color miku_spray            #8cf3e9;
+@define-color miku_magic_mint       #a2f6c8;
+@define-color miku_blue_romance     #d3f8d5;
+
+@define-color miku_grey_light       #bec8d1;  /* Light grey accent */
+@define-color miku_grey_med         #a1adba;  /* Medium cool grey */
+@define-color miku_grey_charcoal    #565d69;  /* Charcoal tone (sleeves/skirt) */
+@define-color miku_grey_deep        #4d5156;  /* Deep dark grey (skirts/sleeves) */
+
+@define-color text_dark             #002b36;
+@define-color text_white            #ffffff;
+@define-color warning               #ff4444;
+@define-color audio_muted           #666666;
+
+/* TODO: Add more colors to this palette, and make alternate color palettes like in: https://www.youtube.com/watch?v=NrRVr-kysko&list=PLrc7oFthJWLvnQRZf85iUAAG_V6gTYfep&index=1 */
+

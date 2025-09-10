@@ -1,50 +1,51 @@
+@import "colors.css";
+
 /* ===== Base Bar ===== */
 * {
     border: none;
     border-radius: 0;
-    font-family: '0xProtoNerdFont', Roboto, sans-serif;
+    font-family: '0xProtoNerdFont';
     font-size: 15px;
     min-height: 0;
 }
 
-/* Miku Colors */
-.color-1 { color: #00b0e0; }   /* Cerulean */
-.color-2 { color: #5ed6e4; }   /* Turquoise Blue */
-.color-3 { color: #8cf3e9; }   /* Spray */
-.color-4 { color: #a2f6c8; }   /* Magic Mint */
-.color-5 { color: #d3f8d5; }   /* Blue Romance */
-.color-dark { color: #002b36; } /* Dark text */
-.color-white { color: #ffffff; } .color-warning { color: #002b36; }
-.color-audio-muted { color: #666666; }
-/* TODO: Add more colors to this palette, and make alternate color palettes like in: https://www.youtube.com/watch?v=NrRVr-kysko&list=PLrc7oFthJWLvnQRZf85iUAAG_V6gTYfep&index=1 */
-
-
 window#waybar {
-    /* background: #d3f8d5;  */
     background: transparent; 
-    color: #002b36;      /* dark text for readability */
-    /* border-bottom: 2px solid #00b0e0;  */ /* Cerulean accent */
+    color: @text_dark;
 }
 
-/* ===== Workspaces ===== */
-#workspaces button {
-    /* TODO: Tweak padding so that there's a small gap bw each workspace button */
-    padding: 0 12px 0 6px;
-    color: #00b0e0;         /* Cerulean */
-    background: #a2f6c8;  /* Magic Mint */
-    border-radius: 6px;
-    transition: background 0.2s;
+/* ===== Module Groups ----===== */
+.modules-right {
+	background-color: @miku_grey_deep;
+	color: @text_dark;
+    border: 2px solid @miku_magic_mint;
+	border-radius: 20px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
 }
 
-#workspaces button:hover {
-    background: #8cf3e9;    /* Spray */
-    color: #002b36;
+.modules-center {
+	background-color: @miku_grey_deep;
+	color: @text_dark;
+    border: 2px solid @miku_magic_mint;
+	border-radius: 20px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
 }
 
-#workspaces button.active {
-    background: #5ed6e4;    /* Turquoise Blue */
-    color: #002b36;
-    font-weight: bold;
+.modules-left {
+	background-color: @miku_grey_deep;
+	color: @text_dark;
+    border: 2px solid @miku_magic_mint;
+	border-radius: 20px;
+	padding-top: 3px;
+	padding-bottom: 2px;
+	padding-right: 4px;
+	padding-left: 4px;
 }
 
 /* ===== Module Defaults ===== */
@@ -58,11 +59,12 @@ window#waybar {
 #tray,
 #custom-power,
 #custom-media {
-    padding: 0 10px;
+	padding-right: 12px;
+	padding-left: 6px;
     margin: 2px 4px;
-    border-radius: 6px;
-    background: #a2f6c8;  /* Magic Mint */
-    color: #002b36;
+    border-radius: 20px;
+    background: transparent; 
+    color: @miku_blue_romance;
 }
 
 /* Hover effect */
@@ -76,27 +78,52 @@ window#waybar {
 #tray:hover,
 #custom-power:hover,
 #custom-media:hover {
-    background: #8cf3e9; /* Spray */
+    background: @miku_spray;
+    color: @miku_grey_deep;
+    transition: background 0.2s;
 }
 
 /* ===== Battery States ===== */
 #battery.warning {
-    background: #ffcc00;
-    color: #002b36;
+    background: @warning;
+    color: @text_dark;
 }
+
 #battery.critical {
-    background: #ff4444;
-    color: #ffffff;
-}
-#battery.charging {
-    background: #5ed6e4; /* Turquoise */
-    color: #002b36;
+    background: @warning;
+    color: @text_dark;
 }
 
 /* ===== Audio ===== */
 #pulseaudio.muted {
-    background: #cccccc;
-    color: #666666;
+    background: @miku_grey_med;
+    color: @miku_grey_light;
+}
+
+/* ===== Workspaces ===== */
+#workspaces button {
+	padding-right: 12px;
+	padding-left: 6px;
+    color: @miku_cerulean;
+	border-radius: 20px;
+    background: transparent; 
+    transition: background 0.2s;
+}
+
+#workspaces button:hover {
+    background: @miku_spray;
+    color: @text_dark;
+}
+
+#workspaces button.active {
+    background: @miku_turquoise;
+    color: @text_dark;
+    font-weight: bold;
+}
+
+#workspaces button.urgent {
+    background: @warning;
+    color: @text_white;
 }
 
 /* ===== Tooltip styling ===== */
@@ -106,10 +133,10 @@ tooltip {
 }
 
 tooltip label {
-    background: #d3f8d5; /* Blue Romance */
-    color: #002b36;
+    background: @miku_grey_med;
+    color: @miku_grey_deep;
     border-radius: 6px;
-    border: 3px solid #5ed6e4; /* Turquoise */
-    /* margin: 8px */
+    border: 3px solid @miku_turquoise;
+    margin: 8px;
 }
 
