@@ -49,11 +49,8 @@ window#waybar {
 }
 
 /* ===== Module Defaults ===== */
-#cpu,
-#memory,
-#temperature,
+#backlight,
 #battery,
-#network,
 #pulseaudio,
 #clock,
 #tray,
@@ -68,9 +65,7 @@ window#waybar {
 }
 
 /* Hover effect */
-#cpu:hover,
-#memory:hover,
-#temperature:hover,
+#backlight:hover,
 #battery:hover,
 #network:hover,
 #pulseaudio:hover,

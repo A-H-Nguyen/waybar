@@ -7,16 +7,17 @@
 
     "modules-left": [
         // "custom/media"
-        "temperature",
-        "memory",
-        "cpu"
+        "tray"
+        // "temperature",
+        // "memory",
+        // "cpu"
     ],
     "modules-center": [
         "hyprland/workspaces"
     ],
     "modules-right": [
-        "tray",
         "pulseaudio",
+        "backlight",
         "battery",
         "clock",
         "custom/power"
@@ -40,26 +41,10 @@
             "default": ""
         }
     },
-    "clock": {
-        // "timezone": "America/New_York",
-        "format": "<big>{:%I:%M %p}</big>",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
-        "format-alt": "<big>{:%Y/%m/%d}</big>"
-    },
-    "cpu": {
-        "format": "<big>{usage}% </big>",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "<big>{}% </big>"
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        "format-critical": "<big>{temperatureC}°C 󰸁</big>",
-        "format": "<big>{temperatureC}°C {icon}</big>",
-        "format-icons": ["", "", ""]
+    "backlight": {
+        "device": "nvidia_0",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", ""]
     },
     "battery": {
         "states": {
@@ -73,6 +58,19 @@
             "default":  ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
             "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
         }
+    },
+    "clock": {
+        "calendar": {
+            "format": {
+                "months":     "<b>{}</b>",
+                "weekdays":   "<u><b>{}</b></u>",
+                "today":      "<span color='#ff6699'><b>{}</b></span>"
+            }
+        },
+        // "timezone": "America/New_York",
+        "format": "<big>{:%I:%M %p}</big>",
+        "tooltip-format": "<tt><big>{calendar}</big></tt>",
+        "format-alt": "<big>{:%Y/%m/%d}</big>"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
@@ -103,8 +101,7 @@
 		"menu-actions": {
 			"shutdown": "shutdown now",
 			"reboot": "shutdown -r now",
-            // TODO: Make a script for calling both hyprlock and suspend
-			"suspend": "systemctl suspend"
+			"suspend": "pidof hyprlock || hyprlock & disown && systemctl suspend"
             // You need a swap partition to do hibernate or hybrid-sleep 
 			// "hibernate": "systemctl hibernate"
 		}
