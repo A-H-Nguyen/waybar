@@ -6,23 +6,40 @@
     "spacing": 2, // Gaps between modules 
 
     "modules-left": [
-        // "custom/media"
-        "tray"
-        // "temperature",
-        // "memory",
-        // "cpu"
+        "mpris"
     ],
+
     "modules-center": [
         "hyprland/workspaces"
     ],
+
     "modules-right": [
+        "tray",
         "pulseaudio",
         "backlight",
         "battery",
         "clock",
         "custom/power"
     ],
+
     // Modules configuration
+    "mpris": {
+        "format": " <big>{player_icon}</big> : {artist} - {title}",
+        "artist-len": 15,
+        "title-len": 45,
+        "player-icons": {
+            "default": "▶",
+            "firefox": "󰈹",
+            "spotify": ""
+        },
+        "tooltip-format": "Current Player: {player}\n------------------------\nNow playing: {title}, by {artist}\n[{position}/{length}]",
+        "tooltip-format-paused": "Current Player: {player}\n------------------------\nNow playing: {title}, by {artist}\n[{position}/{length}] - [PAUSED]"
+        // "format-paused": " <big>{player_icon}</big> : {artist} - {title} <i>({status})</i>",
+        // "status-icons": {
+        //     "paused": "⏸"
+        // }
+    },
+
     "hyprland/workspaces": {
         "all-outputs": false,
         "active-only": false,
@@ -30,7 +47,8 @@
         "warp-on-scroll": false,
         "format": "<big>{name}</big>:<big>{icon}</big>",
         "format-icons": {
-            // trying to get these icons to stay centered in the button is a pain
+            // Trying to get these icons to stay centered in the button is a pain
+            // Don't bother -- I know which workspaces I like to put my programs
             // "1": "",
             // "2": "󰈹",
             // "3": "󰇮",
@@ -41,11 +59,13 @@
             "default": ""
         }
     },
+
     "backlight": {
         "device": "nvidia_0",
         "format": "{percent}% {icon}",
         "format-icons": ["", ""]
     },
+
     "battery": {
         "states": {
             "warning": 30,
@@ -59,19 +79,21 @@
             "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
         }
     },
+
     "clock": {
         "calendar": {
             "format": {
-                "months":     "<b>{}</b>",
-                "weekdays":   "<u><b>{}</b></u>",
-                "today":      "<span color='#ff6699'><b>{}</b></span>"
+                "months":   "<b>{}</b>",
+                "weekdays": "<u><b>{}</b></u>",
+                "today":    "<span color='#ff6699'><b>{}</b></span>"
             }
         },
         // "timezone": "America/New_York",
         "format": "<big>{:%I:%M %p}</big>",
-        "tooltip-format": "<tt><big>{calendar}</big></tt>",
-        "format-alt": "<big>{:%Y/%m/%d}</big>"
+        "tooltip-format": "<tt><big>{calendar}</big></tt>"
+        // "format-alt": "<big>{:%Y/%m/%d}</big>"
     },
+
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
         "format": "{volume}% {icon} {format_source}",
@@ -85,6 +107,7 @@
         },
         "on-click": "pavucontrol"
     },
+
     // TODO: Make this less ugly
     "tray": {
         "icon-size": 21,
@@ -93,6 +116,7 @@
             // "nm-applet": "applications-internet"
         }
     },
+
     "custom/power": {
         "format" : "<big>⏻</big>",
 		"tooltip": false,

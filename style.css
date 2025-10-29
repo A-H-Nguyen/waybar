@@ -10,16 +10,18 @@
 }
 
 window#waybar {
-    background: transparent; 
-    color: @text_dark;
+    background: @miku_grey_deep; 
+    color: @miku_magic_mint;
+    border: 2px solid @miku_magic_mint;
+	border-radius: 20px;
 }
 
 /* ===== Module Groups ----===== */
 .modules-right {
-	background-color: @miku_grey_deep;
-	color: @text_dark;
-    border: 2px solid @miku_magic_mint;
-	border-radius: 20px;
+	background-color: transparent;
+	color: @miku_magic_mint;
+    /* border: 2px solid @miku_magic_mint; */
+	/* border-radius: 20px; */
 	padding-top: 3px;
 	padding-bottom: 2px;
 	padding-right: 4px;
@@ -27,10 +29,10 @@ window#waybar {
 }
 
 .modules-center {
-	background-color: @miku_grey_deep;
-	color: @text_dark;
-    border: 2px solid @miku_magic_mint;
-	border-radius: 20px;
+	background-color: transparent;
+	color: @miku_magic_mint;
+    /* border: 2px solid @miku_magic_mint; */
+	/* border-radius: 20px; */
 	padding-top: 3px;
 	padding-bottom: 2px;
 	padding-right: 4px;
@@ -38,10 +40,10 @@ window#waybar {
 }
 
 .modules-left {
-	background-color: @miku_grey_deep;
-	color: @text_dark;
-    border: 2px solid @miku_magic_mint;
-	border-radius: 20px;
+	background-color: transparent;
+	color: @miku_magic_mint;
+    /* border: 2px solid @miku_magic_mint; */
+	/* border-radius: 20px; */
 	padding-top: 3px;
 	padding-bottom: 2px;
 	padding-right: 4px;
@@ -54,8 +56,7 @@ window#waybar {
 #pulseaudio,
 #clock,
 #tray,
-#custom-power,
-#custom-media {
+#custom-power {
 	padding-right: 12px;
 	padding-left: 6px;
     margin: 2px 4px;
@@ -128,10 +129,10 @@ tooltip {
 }
 
 tooltip label {
-    background: @miku_grey_med;
-    color: @miku_grey_deep;
+    background:@miku_grey_deep;
+    color: @miku_magic_mint;
     border-radius: 6px;
-    border: 3px solid @miku_turquoise;
-    margin: 8px;
+    border: 4px solid @miku_turquoise;
+    margin: 12px;
 }
 
