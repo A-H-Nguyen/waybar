@@ -63,7 +63,8 @@
     "backlight": {
         "device": "nvidia_0",
         "format": "{percent}% {icon}",
-        "format-icons": ["", ""]
+        "format-icons": [""],
+        "tooltip": false
     },
 
     "battery": {
