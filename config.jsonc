@@ -62,7 +62,7 @@
 
     "backlight": {
         "device": "nvidia_0",
-        "format": "{percent}% {icon}",
+        "format": "<big>{percent}% {icon}</big>",
         "format-icons": [""],
         "tooltip": false
     },
@@ -78,7 +78,10 @@
         "format-icons": {
             "default":  ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
             "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-        }
+        },
+        "tooltip-format": "Current capacity: {capacity}%\nBattery Health: {health}%\nDischarging: {timeTo}",
+        "tooltip-format-charging": "Current capacity: {capacity}%\nBattery Health: {health}%\nCharging: {timeTo}",
+        "tooltip-format-plugged": "Current capacity: {capacity}%\nBattery Health: {health}%\nPlugged In"
     },
 
     "clock": {
@@ -89,20 +92,20 @@
                 "today":    "<span color='#ff6699'><b>{}</b></span>"
             }
         },
-        // "timezone": "America/New_York",
+        "timezone": "America/New_York",
         "format": "<big>{:%I:%M %p}</big>",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
         // "format-alt": "<big>{:%Y/%m/%d}</big>"
     },
 
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "󰖁 {format_source}",
+        "scroll-step": 5, // %, can be a float
+        "format": "<big>{volume}% {icon} |{format_source}</big>",
+        // "format-bluetooth": "{volume}% {icon} {format_source}",
+        // "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{volume}% 󰖁 |{format_source}",
         "format-source": "{volume}% ",
-        "format-source-muted": "",
+        "format-source-muted": "{volume}% ",
         "format-icons": {
             "default": ["", "", ""]
         },
