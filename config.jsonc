@@ -25,8 +25,8 @@
     // Modules configuration
     "mpris": {
         "format": " <big>{player_icon}</big> : {artist} - {title}",
-        "artist-len": 15,
-        "title-len": 45,
+        "artist-len": 12,
+        "title-len": 40,
         "player-icons": {
             "default": "▶",
             "firefox": "󰈹",
@@ -92,7 +92,7 @@
                 "today":    "<span color='#ff6699'><b>{}</b></span>"
             }
         },
-        "timezone": "America/New_York",
+        // "timezone": "America/New_York",
         "format": "<big>{:%I:%M %p}</big>",
         "tooltip-format": "<tt><big>{calendar}</big></tt>"
         // "format-alt": "<big>{:%Y/%m/%d}</big>"
