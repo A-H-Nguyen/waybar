@@ -6,7 +6,9 @@
     "spacing": 2, // Gaps between modules 
 
     "modules-left": [
-        "mpris"
+        // "mpris"
+        "tray",
+        "pulseaudio"
     ],
 
     "modules-center": [
@@ -14,8 +16,6 @@
     ],
 
     "modules-right": [
-        "tray",
-        "pulseaudio",
         "backlight",
         "battery",
         "clock",
@@ -27,10 +27,11 @@
         "format": " <big>{player_icon}</big> : {artist} - {title}",
         "artist-len": 12,
         "title-len": 40,
+        // "player": "spotify", // I think that explicitly setting the default player to NOT be playerctl fixes the crashing problem
         "player-icons": {
-            "default": "▶",
-            "firefox": "󰈹",
-            "spotify": ""
+            "default": "",
+            "firefox": "󰈹"
+            // "spotify": ""
         },
         "tooltip-format": "Current Player: {player}\n------------------------\nNow playing: {title}, by {artist}\n[{position}/{length}]",
         "tooltip-format-paused": "Current Player: {player}\n------------------------\nNow playing: {title}, by {artist}\n[{position}/{length}] - [PAUSED]"
