@@ -130,9 +130,9 @@
 		"menu-actions": {
 			"shutdown": "shutdown now",
 			"reboot": "shutdown -r now",
-			"suspend": "pidof hyprlock || hyprlock & disown && systemctl suspend"
-            // You need a swap partition to do hibernate or hybrid-sleep 
-			// "hibernate": "systemctl hibernate"
+			"sleep": "systemctl hibernate"
+			// "suspend": "systemctl suspend-then-hibernate",
+			//"sleep": "systemctl hybrid-sleep"
 		}
     }
 }
