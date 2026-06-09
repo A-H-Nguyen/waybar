@@ -7,8 +7,7 @@
 
     "modules-left": [
         // "mpris"
-        "tray",
-        "pulseaudio"
+        "tray"
     ],
 
     "modules-center": [
@@ -16,8 +15,9 @@
     ],
 
     "modules-right": [
-        "backlight",
-        "battery",
+        "pulseaudio",
+        // "backlight",
+        // "battery",
         "clock",
         "custom/power"
     ],
